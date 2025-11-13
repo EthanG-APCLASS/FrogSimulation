@@ -17,19 +17,35 @@ public class FrogSimulation
     /** Returns an integer representing the distance, in inches, to be moved when the frog hops.
      */
     private int hopDistance()
-    { /* implementation not shown */ }
+    {
+        int randonNum = Math.random()*;
+        return randonNum;
+    }
 
     /** Simulates a frog attempting to reach the goal as described in part (a).
      * Returns true if the frog successfully reached or passed the goal during the simulation;
      * false otherwise.
      */
     public boolean simulate()
-    { /* to be implemented in part (a) */ }
+    {
+        int position = 0;
+        for (i = 0; i < maxHops; i++)
+        {
+            position += hopDistance();
+        }
+        if (position > goalDistance) return true;
+        else if (i > maxHops) return false;
+    }
 
     /** Runs num simulations and returns the proportion of simulations in which the frog
      * successfully reached or passed the goal.
      * Precondition: num > 0
      */
     public double runSimulations(int num)
-    { /* to be implemented in part (b) */ }
+    {
+        int num_true = 0;
+        for (int i = 0; i < num; i++)
+            simulate();
+        if
+    }
 }
