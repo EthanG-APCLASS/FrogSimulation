@@ -18,7 +18,7 @@ public class FrogSimulation
      */
     private int hopDistance()
     {
-        int randonNum = Math.random()*;
+        int randonNum = (int) (Math.random()*33) - 5;
         return randonNum;
     }
 
@@ -29,12 +29,12 @@ public class FrogSimulation
     public boolean simulate()
     {
         int position = 0;
-        for (i = 0; i < maxHops; i++)
+        for (int i = 0; i < maxHops; i++)
         {
             position += hopDistance();
         }
         if (position > goalDistance) return true;
-        else if (i > maxHops) return false;
+        else return false;
     }
 
     /** Runs num simulations and returns the proportion of simulations in which the frog
@@ -44,8 +44,10 @@ public class FrogSimulation
     public double runSimulations(int num)
     {
         int num_true = 0;
-        for (int i = 0; i < num; i++)
-            simulate();
-        if
+            for (int i = 0; i < num; i++)
+            {
+                if (simulate()) num_true++;
+            }
+        return (double) num_true/num;
     }
 }
